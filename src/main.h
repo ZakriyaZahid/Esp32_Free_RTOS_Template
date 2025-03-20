@@ -1,0 +1,9 @@
+#include <Arduino.h>
+#include <serial_print_task.h>
+#include <blink_task.h>
+#include <enum.h>
+
+#define blink_gpio 4
+
+TaskHandle_t Serial_Print_Handle;
+TaskHandle_t blink_gpio_Handle;
