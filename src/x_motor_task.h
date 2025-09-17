@@ -1,6 +1,6 @@
 //==============================================================================
 //
-//  serial_print_task.h
+//  blink_task.h
 //
 //
 //==============================================================================
@@ -24,7 +24,12 @@
 //==============================================================================
 //  INCLUDES
 //==============================================================================
-
 #include <Arduino.h>
+#include <enum.h>
 
-void serial_print(void *pvParameters);
+extern void x_stepp_motor_task(void *pvParameters);
+
+void x_stepp_motor_operate(bool, uint32_t);
+
+extern uint8_t X_STEPP_MOTOR_FLAG;
+extern uint8_t X_STEPP_MOTOR_SPEED;

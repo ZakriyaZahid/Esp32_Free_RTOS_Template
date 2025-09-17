@@ -1,0 +1,473 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,  user-scalable=no">
+    <title>UGV</title>
+    <style>
+        body{
+            margin: auto;
+        }
+        h1{
+            align-content: center;
+            color: white;
+            
+        }
+        #mainsection{
+            height: 90vh;  width: 25vw;
+            background-color: rgb(89, 240, 240);  
+            border: 5px solid saddlebrown; 
+            display: flex;
+            flex-direction: column;
+            display: block;
+        }
+            .overlay{
+               height: 90vh;  width: 25vw; border: 1px solid rgb(42, 165, 73); 
+                background-color:rgb(68, 134, 114) ;
+
+               display: none;   
+            }
+            .overlaysection1{height: 10%;  width: 100%;  background-color:rgb(71, 63, 180); display: flex;  }
+            .overlaysection2{height: 20%;  width: 100%;   background-color:rgb(112, 236, 143) ;  display: flex;  }
+            .overlaysection3{height: 20%;  width: 100%;   background-color:rgb(112, 236, 143) ;   display: flex;  }
+            .overlaysection4{height: 20%;  width: 100%;  background-color:rgb(76, 199, 107) ; display: flex; flex-direction: row;}
+            .overlaysection5{height: 20%;  width: 100%;  background-color:rgb(76, 199, 107) ;   display: flex; flex-direction: row;}
+            .overlaysection6{height: 10%;  width: 100%;  background-color:rgb(71, 63, 180);   display: flex; flex-direction: row; }
+                    .txtbox{height: 60%; width: 20%; align-content: center; margin: auto;   text-align: center;
+                                 border: 3px solid brown;   border-radius: 10%; background-color:rgb(231, 182, 19) ;
+                                 font-size: x-large;
+                              }
+                    .label{margin-left: 2%; margin-top:12%;  font-size: x-large;}
+
+
+
+
+                .section1{height: 10%;  width: 100%;   display: flex; }
+                                         .section1-1{height: 100%;  width: 50%;  }
+                                         .section1-2{height: 100%;  width: 50%;   padding-top:2px;}
+                                                  
+                .section2{height: 45%;  width: 100%; border-top: 5px solid brown; border-bottom: 5px solid brown; background-color:white ; }
+                .section3{height: 10%;  width: 100%;    display: flex;   }
+                                         .section3-1{height: 100%;  width: 50%; }
+                                         .section3-2{height: 100%;  width: 50%;   padding-top:2px;}  
+                                                      .slider {
+                                                         -webkit-appearance: none; 
+  appearance: none;
+                                                         width: 80%; /* Full-width */
+                                                         height: 10%; /* Specified height */
+                                                         background: rgb(5, 28, 105);
+                                                         /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.5; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  border-radius: 20%;
+  margin-left: 10%;
+}
+.slider:active{opacity: 1;}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 20px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  background: #01023a; /* Green background */
+  border-radius: 20px;
+ 
+}
+                                                      
+                                                      .slidervalue{
+                                                         align-content: center;
+                                                         height: 40%;  width: 25%; background-color: rgb(209, 56, 94);
+                                                         margin: auto;   border-radius: 30%;
+                                                         color: white;
+                                                         text-align: center;
+                                                      }
+  
+  
+
+                .section4{height: 30%;  width: 100%;  ;
+                           display: flex;
+                           flex-direction: row;
+               }
+                            .section4-1{height: 100%;  width: 50%;   display: flex;  flex-direction: column;}
+                                         .section4-1-1{height: 33%;  width: 100%;  }
+                                         .section4-1-2{height: 33%;  width: 100%;  }
+                                         .section4-1-3{height: 33%;  width: 100%;  }
+                            .section4-2{height: 100%;  width: 50%;   }
+                                  .roundbutton{height: 80%;  width: 80%;  
+                                    background-color: rgb(54, 47, 128); flex-direction: column;   margin-top: 10%;
+                                      margin-left: 10%; 
+                                      border-radius: 50%;
+                                      border: 5px solid rgb(29, 29, 32); 
+                                      box-shadow: 0 3px #666666; }
+                                      .roundbutton:active{box-shadow: 0 1px #666666;   transform: translateY(2px);}
+                                         .section4-2-1{height: 33%;  width: 100%;  }
+                                         .section4-2-2{height: 33%;  width: 100%;  }
+                                         .section4-2-3{height: 33%;  width: 100%;  }
+                .section5{height: 5%;  width: 100%;  }
+                                             
+
+                                  .btnControl{
+                                        height: 90%;  width: 28%;
+                                        background-color: rgb(111, 77, 143);  
+                                        border: 3px solid rgb(173, 51, 51);  border-radius: 50%;
+                                      box-shadow: 0 4px #666666;
+                                      border-style: outset;
+                                    }
+                                    
+                                          .btnControl:active{
+                                                        height: 90%;  width: 28%;
+                                                      background-color: rgb(93, 30, 153);  
+                                                        border: 5px solid rgb(115, 31, 148);  border-radius: 50%;
+                                                        box-shadow: 0 1px #666666;
+                                                        transform: translateY(2px);
+                                                        border-style: inset;
+}                                                
+                                                    
+                                      .actuatorbtn{
+                                        height: 80%;  width: 23%;
+                                        background-color: rgb(111, 77, 143);  
+                                        border: 3px solid rgb(173, 51, 51);  border-radius: 50%;
+                                      box-shadow: 0 4px #666666;
+                                      border-style: outset; 
+                                      
+                                    }
+                                    .actuatorbtn:active{box-shadow: 0 1px #666666;   transform: translateY(2px);  border-style: inset;}                                        
+                                  .btn{
+                                        height: 80%;  width: 23%;
+                                        background-color: rgb(111, 77, 143);  
+                                      border: 3px solid rgb(173, 51, 51);  border-radius: 50%;
+                                      box-shadow: 0 4px #666666;
+                                      border-style: outset;
+                                    }
+                                          .btn:active{
+                                                        height: 80%;  width: 23%;
+                                                      background-color: rgb(93, 30, 153);  
+                                                          border-radius: 50%;
+                                                        box-shadow: 0 1px #666666;
+                                                        transform: translateY(2px);
+                                                        border-style: inset;
+                                                    }
+                                    .btnOverlay{
+                                        height: 80%;  width: 23%;
+                                        background-color: rgb(111, 77, 143);  
+                                      border: 3px solid rgb(173, 51, 51);  border-radius: 50%;
+                                      box-shadow: 0 4px #666666;
+                                      border-style: outset;
+                                      margin: auto;
+                                    }
+                                          .btnOverlay:active{
+                                                        height: 80%;  width: 23%;
+                                                      background-color: rgb(93, 30, 153);  
+                                                          border-radius: 50%;
+                                                        box-shadow: 0 1px #666666;
+                                                        transform: translateY(2px);
+                                                        border-style: inset;
+                                                    }
+                                                           #btnF{margin-left: 37%; margin-top: 5%;}
+                                                           #btnL{margin-left: 3%; margin-top: 5%;}
+                                                           #btnS{margin-left: 3%; margin-top: 5%;}
+                                                           #btnR{margin-left: 3%; margin-top: 5%;}
+                                                           #btnB{margin-left: 37%; margin-top: 5%;}
+                                                           #btnSetting{margin-left: 5%; margin-top: 2%;  }
+                                                           #btnLaser{margin-left: 5%; margin-top: 2%; background-color: rgb(255, 208, 0);}
+                                                           #btnHorn{margin-left: 5%; margin-top: 2%; background-color: rgb(116, 253, 62);}
+                                                           #btnReload{margin-left: 5%; margin-top: 5%;   background-color: brown;}
+                                                           #btnFire{margin-left: 5%; margin-top: 5%;  background-color: red;}
+                                                           #btnAlign{margin-left: 5%; margin-top: 5%;  background-color: blue;}
+
+                                                           #btn1{margin-left: 1%; margin-top: 0%; margin-bottom: 10%; }
+                                                           #btn2{margin-left: 1%; margin-top: 10%;}
+                                                           #btn3{margin-left: 9%; margin-top: 5%;}
+                                                           #btn4{margin-left: 1%; margin-top: 0%; margin-bottom: 10%;}
+                                                           #btn5{margin-left: 1%; margin-top: 0%; }
+                                                           #btn6{margin-left: 11%; margin-top: 0%;  margin-bottom: 10%;}
+                                                           #btn7{margin-left: 4%; margin-top: 5%;}
+                                                           #btn8{margin-left: 11%; margin-top: 10%;}
+                                                           #btn9{margin-left: 8%; margin-top: 5%;}
+
+                                                           #btnSubmit{margin:auto;  background-color: rgb(116, 253, 62);}
+                                                           #btnSettingend{margin:auto;  background-color: rgb(116, 253, 62);}
+    </style>
+</head>
+<body>
+
+
+<section id="overlay" class="overlay">
+   <section id="overlaysection1" class="overlaysection1">
+      <input type="button" id="btnSettingend" class="btn" value="Back" onclick="Settingend();"     >  
+   </section>
+   <section id="overlaysection2" class="overlaysection2">
+      <input type="button" id="btnLight1" class="btnOverlay" value="Light1" onclick="Light1();"     >
+      <input type="button" id="btnLight2" class="btnOverlay" value="Light2" ontouchstart="Light2();"      >
+      <input type="button" id="btn" class="btnOverlay" value="Reserved" ontouchstart="Hornstart();"      >    
+   </section>
+   <section id="overlaysection3" class="overlaysection3">
+      <input type="button" id="btn" class="btnOverlay" value="Reserved" onclick="fun();"     >
+      <input type="button" id="btn" class="btnOverlay" value="Reserved" ontouchstart="Laserstart();"   ontouchend="Laserend();"   >
+      <input type="button" id="btn" class="btnOverlay" value="Reserved" ontouchstart="Hornstart();"   ontouchend="Hornend();"   >    
+   </section>
+   <section id="overlaysection4" class="overlaysection4">
+      <label for="value1" class="label">Value-1</label>
+      <input type="text" id="value1" class="txtbox" value="0"     >
+      <label for="value2" class="label">Value-2</label>
+      <input type="text" id="value2" class="txtbox" value="0"    >    
+   </section>
+   <section id="overlaysection5" class="overlaysection5">
+      <label for="value3"  class="label">Value-3</label>
+      <input type="text" id="value3" class="txtbox" value="0"    >
+      <label for="value4"  class="label">Value-4</label>
+      <input type="text" id="value4" class="txtbox" value="0"    >    
+   </section>
+   <section id="overlaysection6" class="overlaysection6">
+      <input type="button" id="btnSubmit" class="btn" value="Submit" ontouchstart="SubmitValues();"     >    
+   </section>
+</section>
+   
+<section  id="mainsection" >
+
+
+
+
+
+<section id="section1" class="section1">
+   <section id="section1-1" class="section1-1">
+      <input type="button" id="btnSetting" class="btn" value="" onclick="Settingstart();"     >
+      <input type="button" id="btnLaser" class="btn" value="" ontouchstart="Laserstart();"   ontouchend="Laserend();"   >
+      <input type="button" id="btnHorn" class="btn" value="" ontouchstart="Hornstart();"   ontouchend="Hornend();"   >    
+   </section>
+   <section id="section1-2" class="section1-2">
+      <section id="slider1value" class="slidervalue">
+
+      </section>
+      <input type="range" min="0" max="255" value="122" class="slider" id="RoboRange">
+   </section>
+</section>    
+
+
+<section id="section2" class="section2">
+   <img id= "camstream" src="" style='width:100%; height: 100%;'>
+</section>
+
+
+<section id="section3" class="section3">
+   <section id="section3-1" class="section3-1">
+      <input type="button" id="btnFire" class="btn" value="" ontouchstart="Firestart();"   ontouchend="Fireend();"   > 
+      <input type="button" id="btnReload" class="btn" value="" ontouchstart="Reloadstart();"   ontouchend="Reloadend();"   > 
+      <input type="button" id="btnAlign" class="btn" value="" ontouchstart="Alignstart();"   ontouchend="Alignend();"   >
+   </section>
+   <section id="section3-2" class="section3-2">
+      <section id="slider2value" class="slidervalue">
+         
+      </section>
+      <input type="range" min="1" max="5000" value="2500" class="slider" id="ActRange">
+   </section>
+</section>
+
+
+<section id="section4" class="section4">
+   <section id="section4-1" class="section4-1">
+      <section id="section4-1-1" class="section4-1-1">
+         <input type="button" id="btnF" class="btnControl" value="" ontouchstart="RoboFstart();"   ontouchend="Roboend();"   >
+      </section>
+      <section id="section4-1-2" class="section4-1-2">
+         <input type="button" id="btnL" class="btnControl" value="" ontouchstart="RoboLstart();"   ontouchend="Roboend();"   >
+         <input type="button" id="btnS" class="btnControl" value="" ontouchstart="Roboend();"     >
+         <input type="button" id="btnR" class="btnControl" value=""  ontouchstart="RoboRstart();"   ontouchend="Roboend();" >
+      </section>
+      <section id="section4-1-3" class="section4-1-3">
+         <input type="button" id="btnB" class="btnControl" value="" ontouchstart="RoboBstart();"   ontouchend="Roboend();"   >
+      </section>
+   </section>
+   <section id="section4-2" class="section4-2">
+      <section id="roundbutton" class="roundbutton">
+      
+         <section id="section4-2-1" class="section4-2-1">
+             <input type="button" id="btn8" class="actuatorbtn" value="" ontouchstart="ActULstart();"   ontouchend="Actend();"   >
+             <input type="button" id="btn1" class="actuatorbtn" value="" ontouchstart="ActUstart();"   ontouchend="Actend();"   >
+             <input type="button" id="btn2" class="actuatorbtn" value=""  ontouchstart="ActURstart();"   ontouchend="Actend();" >
+         </section>
+         <section id="section4-2-2" class="section4-2-2"> 
+             <input type="button" id="btn7" class="actuatorbtn" value="" ontouchstart="ActLstart();"   ontouchend="Actend();"   >
+             <input type="button" id="btn9" class="actuatorbtn" value="" ontouchstart="ActRestore();"   ontouchend="Actend();"   >
+             <input type="button" id="btn3" class="actuatorbtn" value=""  ontouchstart="ActRstart();"   ontouchend="Actend();" >
+         </section>
+         <section id="section4-2-3" class="section4-2-3">
+             <input type="button" id="btn6" class="actuatorbtn" value="" ontouchstart="ActDLstart();"   ontouchend="Actend();"   >
+            <input type="button" id="btn5" class="actuatorbtn" value="" ontouchstart="ActDstart();"   ontouchend="Actend();"   >
+             <input type="button" id="btn4" class="actuatorbtn" value=""  ontouchstart="ActDRstart();"   ontouchend="Actend();" > 
+         </section>
+      </section>
+   </section>
+</section>
+
+
+<section id="section5" class="section5">
+
+</section>
+
+
+
+
+
+
+</section>
+
+
+<script type="text/JavaScript">
+
+/*
+var cam = 2;
+window.onload = document.getElementById("camstream").src = "http://192.168.4."+ cam + "/stream";
+
+
+function CamSwitch(){  
+  if(cam == 1){cam = 2;}   else{cam = 1;}
+window.onload = document.getElementById("camstream").src = "http://192.168.4."+ cam + "/stream";
+}
+
+*/
+
+
+
+window.onload = document.getElementById("camstream").src = "http://192.168.4.2/stream";
+
+
+
+
+var gateway = `ws://${window.location.hostname}/ws`;
+  var websocket;
+  window.addEventListener('load', initWebSocket);
+
+  
+  function initWebSocket() {
+    console.log('Trying to open a WebSocket connection...');
+    websocket = new WebSocket(gateway);
+    websocket.onopen    = onOpen;
+    websocket.onclose   = onClose;
+    websocket.onmessage = onMessage; // <-- add this line
+  }
+  
+  function onOpen(event) { console.log('Connection opened'); }
+  
+  function onClose(event) { console.log('Connection closed');  setTimeout(initWebSocket, 2000); }
+  
+  function onMessage(event) {
+    var state;
+    if (event.data == "1"){   state = "ON";  }
+    else{   state = "OFF";   }
+    
+    document.getElementById('state').innerHTML = state;
+  }
+  
+
+
+
+  function toggle(){  websocket.send('toggle');  }
+
+
+
+
+
+     function Settingstart(){
+document.getElementById("mainsection").style.display='none';  document.getElementById("overlay").style.display='block';}
+      function Settingend(){
+document.getElementById("mainsection").style.display='block'; document.getElementById("overlay").style.display='none';}
+
+
+     function RoboFstart(){  websocket.send('RoboFstart');  }
+     function RoboLstart(){websocket.send('RoboLstart');}
+     function RoboRstart(){websocket.send('RoboRstart');}
+     function RoboBstart(){websocket.send('RoboBstart');}                             
+     function Roboend(){ websocket.send('Roboend'); }
+
+
+     function ActUstart(){websocket.send('ActUstart'); }
+     function ActLstart(){ websocket.send('ActLstart');}
+     function ActRstart(){ websocket.send('ActRstart');}
+     function ActDstart(){ websocket.send('ActDstart');}
+     function ActULstart(){websocket.send('ActULstart');  }
+     function ActURstart(){ websocket.send('ActURstart'); }
+     function ActDLstart(){ websocket.send('ActDLstart'); }
+     function ActDRstart(){websocket.send('ActDRstart');  }
+     function Actend(){ websocket.send('Actend'); }
+
+     
+
+
+     function ActRestorestart(){ websocket.send('ActRestore'); }
+    // function ActRestoreend(){  fetch(document.location.origin+"/Act?Act=0").then(response => {}).then(result =>{});}
+
+
+
+
+     function Laserstart(){ websocket.send('ToggleLaser');}
+
+     function Hornstart(){ websocket.send('Hornstart');}
+     function Hornend(){ websocket.send('Hornend');}
+
+     function Firestart(){ websocket.send('Fire');}
+
+     function Reloadstart(){ websocket.send('Reload');}
+
+     function Alignstart(){  websocket.send('Align');}
+
+
+     function Light1(){  websocket.send('ToggleLight1');}
+
+     function Light2(){ websocket.send('ToggleLight2');}
+
+     function Reserved(){  websocket.send('toggle');}
+
+     function Reserved(){  websocket.send('toggle');}
+
+     function Reserved(){ websocket.send('toggle');}
+
+     function Reserved(){  websocket.send('toggle');}
+
+
+     function SubmitValues(){ 
+      var V1 = document.getElementById("value1").value;
+      var V2 = document.getElementById("value2").value;
+      var V3 = document.getElementById("value3").value;
+      var V4 = document.getElementById("value4").value;
+
+       fetch(document.location.origin+"/Values?Value1=V1&Value2=V2&Value3=V3&Value4=V4").then(response => {}).then(result =>{});
+     }
+
+
+
+ 
+
+
+
+
+var slider1 = document.getElementById("RoboRange");
+var output1 = document.getElementById("slider1value");
+output1.innerHTML = slider1.value; 
+
+slider1.oninput = function() {
+  output1.innerHTML = this.value;
+  fetch(document.location.origin+"/Range?RoboRange="+this.value).then(response => {}).then(result =>{});
+}
+
+
+
+var slider2 = document.getElementById("ActRange");
+var output2 = document.getElementById("slider2value");
+output2.innerHTML = (slider2.value); 
+
+slider2.oninput = function() {
+  output2.innerHTML = this.value;
+  fetch(document.location.origin+"/Range?ActRange="+this.value).then(response => {}).then(result =>{});
+}
+
+</script>
+
+
+</body>
+</html>
+

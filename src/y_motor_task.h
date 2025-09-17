@@ -1,6 +1,6 @@
 //==============================================================================
 //
-//  serial_print_task.cpp
+//  serial_print_task.h
 //
 //
 //==============================================================================
@@ -24,13 +24,12 @@
 //==============================================================================
 //  INCLUDES
 //==============================================================================
-#include <serial_print_task.h>
 
-void serial_print(void *pvParameters)
-{
-    while (1)
-    {
-        Serial.println("serial_print task is Running");
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
-    }
-}
+#include <Arduino.h>
+#include <enum.h>
+
+extern void y_stepp_motor_task(void *pvParameters);
+void y_stepp_motor_operate(bool, uint32_t);
+
+extern uint8_t Y_STEPP_MOTOR_FLAG;
+extern uint8_t Y_STEPP_MOTOR_SPEED;
